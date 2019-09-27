@@ -4,12 +4,11 @@ let ProgressValue = 0,
     ThirdButtonValue = 7,
     ProgressBarWidth = 0;
 
-console.log ('Значение ProgressBarWidth: ' + ProgressBarWidth);
+console.log ('ProgressBarWidth: ' + ProgressBarWidth);
 
 
 $("#OnePersentButton").click(function(){
   ProgressValue = ProgressValue + FirstButtonValue;
-  console.log ('Нажата первая кнопка, значение пргресс-бара: ' + ProgressValue + '%');
   if (ProgressValue >= 100) {
     ProgressValue = 100;
   };
@@ -18,7 +17,6 @@ $("#OnePersentButton").click(function(){
 
 $('#ThreePersentButton').click(function(){
   ProgressValue = ProgressValue + SecondButtonValue;
-  console.log ('Нажата вторая кнопка, значение пргресс-бара: ' + ProgressValue + '%');
   if (ProgressValue >= 100) {
     ProgressValue = 100;
   };
@@ -27,7 +25,6 @@ $('#ThreePersentButton').click(function(){
 
 $('#SevenPersentButton').click(function(){
   ProgressValue = ProgressValue + ThirdButtonValue;
-  console.log ('Нажата третья кнопка, значение пргресс-бара: ' + ProgressValue + '%');
   if (ProgressValue >= 100) {
     ProgressValue = 100;
   };
@@ -37,8 +34,15 @@ $('#SevenPersentButton').click(function(){
 function progressUp () {
   ProgressBarWidth = ProgressValue;
   $('#progressbar').width(ProgressBarWidth + '%');
-  console.log ('Значение ProgressBarWidth: ' + ProgressBarWidth);
+  console.log ('ProgressBarWidth: ' + ProgressBarWidth + '%');
   $('#progressbar').html(`${ProgressBarWidth}%`);
 };
+
+$('#Restart').click(function(){
+  ProgressValue = ProgressValue * 0;
+  $("#progressbar").width("0%");
+  console.log ('ProgressBarWidth: 0%');
+  $('#progressbar').html('0%');
+});
 
 console.log ('Скрипт подгрузился');
