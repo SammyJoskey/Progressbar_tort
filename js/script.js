@@ -1,10 +1,12 @@
+console.log ('Скрипт подгрузился');
+
 let ProgressValue = 0,
     FirstButtonValue = 1,
     SecondButtonValue = 3,
     ThirdButtonValue = 7,
     ProgressBarWidth = 0;
 
-console.log ('ProgressBarWidth: ' + ProgressBarWidth);
+console.log ('ProgressBarWidth: ' + ProgressBarWidth + '%');
 
 
 $("#OnePersentButton").click(function(){
@@ -40,9 +42,9 @@ function progressUp () {
 
 $('#Restart').click(function(){
   ProgressValue = ProgressValue * 0;
+  ProgressBarWidth = ProgressBarWidth * 0;
   $("#progressbar").width("0%");
-  console.log ('ProgressBarWidth: 0%');
+  console.log ('ProgressBarWidth: ' + ProgressBarWidth + '%');
   $('#progressbar').html('0%');
 });
 
-console.log ('Скрипт подгрузился');
